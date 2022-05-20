@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Выбор образовательной траектории</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/cssfile.css')}}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="tm-left-right-container">
+
+            <!-- Left column: logo and menu -->
+
+            <div class="tm-blue-bg tm-left-column">
+
+                <div class="tm-logo-div text-xs-center">
+                    <h1 class="tm-site-name">Выбор образовательной траектории</h1>
+
+                </div>
+
+                <nav class="tm-main-nav">
+
+                    <!-- навигация по сайту, меню -->
+
+                    <ul class="tm-main-nav-ul">
+
+                        <li class="tm-nav-item">
+                            <a href="index.html" class="tm-nav-item-che">Главная</a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="interactive.html" class="tm-nav-item-link">Дополнительная информация</a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="feedback.html" class="tm-nav-item-link">Обратная связь</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+            <div class="tm-right-column">
+                <div class="tm-content-div">
+
+                    <!-- Contact Us section -->
+                    <section id="contact" class="tm-section">
+                        <header><h1 class="tm-blue-text tm-section-title tm-margin-b-30">Страница для обратной связи</h1></header>
+
+                                {% for cat, msg in get_flashed_messages(True) %}
+                                <div class = 'flash {{cat}}'>{{msg}}</div>
+                                {% endfor %}
+                                <form action="{{url_for('feedback')}}" method='POST', class = 'form-contact'>
+
+
+                                        <p><label for="contact_name"></label><input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Имя" required /></p>
+                                        <p><label for="contact_surname"></label><input type="text" id="contact_surname" name="contact_surname" class="form-control" placeholder="Фамилия" required /></p>
+                                        <p></p><label for="contact_message"></label><textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Ваш отзыв" required></textarea></p>
+                                    <p>
+                                        <input type="submit"  name="submit" value="Отправить">
+                                    </p>
+                                </form>
+
+
+
+                    </section>
+
+
+
+
+</div>
+
+                </div>
+        </div>
+
+    </div> <!-- row -->
+
+</div> <!-- container -->
+</body>
+</html>

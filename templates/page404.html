@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Выбор траектории студентом</title>
+    <link type="text/css" href="{{ url_for('static', filename='css/cssfile.css')}}" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="tm-left-right-container">
+
+            <!-- Left column: logo and menu -->
+
+            <div class="tm-blue-bg tm-left-column">
+
+                <div class="tm-logo-div text-xs-center">
+                    <h1 class="tm-site-name">Выбор образовательной траектории</h1>
+
+                </div>
+
+                <nav class="tm-main-nav">
+
+                    <!-- навигация по сайту, меню -->
+
+                    <ul class="tm-main-nav-ul">
+
+                        <li class="tm-nav-item">
+                            <a href="index.html" class="tm-nav-item-che">Главная</a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="interactive.html" class="tm-nav-item-link">Дополнительная информация</a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="feedback.html" class="tm-nav-item-link">Обратная связь</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+                <div class="tm-right-column">
+                     <p>...Страница не найдена!
+                              <a href={{url_for('main')}}>Вернуться на главную</a>
+                            </p>
+                <div class="tm-content-div">
+            </div> <!-- Right column: content -->
+
+        </div>
+</div>
+    </div> <!-- row -->
+
+</div> <!-- container -->
+                    </body>
+</html>
